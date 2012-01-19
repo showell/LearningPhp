@@ -1,0 +1,11 @@
+<?php
+function gcd($x, $y) {
+  if ($y == 0) {
+    return $x;
+  } else {
+    return gcd($y, $x % $y);
+  }
+}
+
+echo gcd(15, 25);
+?>
