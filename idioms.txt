@@ -1,0 +1,2 @@
+foreach (array_reverse($lst) as $elem)
+$lst = array(1,2,3);
