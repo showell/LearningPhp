@@ -1,7 +1,7 @@
 <?php
 function get_subset($binary, $arr) {
-  // based on true/false values in $binary array, print
-  // values in $arr
+  // based on true/false values in $binary array, include/exclude
+  // values from $arr
   $subset = array();
   foreach (range(0, count($arr)-1) as $i) {
     if ($binary[$i]) {
