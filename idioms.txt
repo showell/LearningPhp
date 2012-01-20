@@ -4,3 +4,7 @@ casting: (int)
 floor()
 +=
 for classes, see http://rosettacode.org/wiki/Ethiopian_multiplication#PHP
+pow()
+array_key_exists()
+
+good docs: http://www.php.net/manual/en/function.array-merge.php
