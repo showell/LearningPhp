@@ -1,8 +1,4 @@
 <?php
-  function same($n) {
-    return $n;
-  }
-  
   function combos($arr, $k) {
     if ($k == 1) {
       $result = array();
