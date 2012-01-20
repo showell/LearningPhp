@@ -42,4 +42,7 @@
     }
     echo "<br>";
   }
+  $donuts = range(1, 10);
+  $num_donut_combos = count(combos($donuts, 3));
+  echo "$num_donut_combos ways to order 3 donuts given 10 types";
 ?>
