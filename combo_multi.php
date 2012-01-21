@@ -1,42 +1,30 @@
 <?php
   function combos($arr, $k) {
-    if ($k == 1) {
-      $result = array();
-      foreach ($arr as $elem) {
-        array_push($result, array($elem));
-      }
-      return $result;
+    if ($k == 0) {
+      return array(array());
     }
-    
+ 
+    if (count($arr) == 0) {
+      return array();
+    }
+ 
     $head = $arr[0];
-    
-    if (count($arr) == 1) {
-      $result = array();
-      for ($i = 0; $i < $k; $i += 1) {
-        array_push($result, $head);
-      }
-      return array($result);
-    }
-    
+ 
     $combos = array();
     $subcombos = combos($arr, $k-1);
     foreach ($subcombos as $subcombo) {
-      $combo = array($head);
-      $combo = array_merge($combo, $subcombo);
-      array_push($combos, $combo);
+      array_unshift($subcombo, $head);
+      $combos[] = $subcombo;
     }
     array_shift($arr);
     $combos = array_merge($combos, combos($arr, $k));
     return $combos;
   }
-  
+ 
   $arr = array("iced", "jam", "plain");
   $result = combos($arr, 2);
   foreach($result as $combo) {
-    foreach($combo as $elem) {
-      echo $elem, " ";
-    }
-    echo "<br>";
+    echo implode(' ', $combo), "<br>";
   }
   $donuts = range(1, 10);
   $num_donut_combos = count(combos($donuts, 3));
